@@ -301,3 +301,35 @@ EFS Features
 EFS is block based storage - instead of object based so you can share with multiple EC2 instances.
 
 With EFS - you can have one file system mounted across multiple servers all serving the same code from the same file system.
+
+### my_aws_journey_09
+
+Installed PHP software development kit for AWS through composer.
+
+Started by downloading a bootstrap script from the cloud guru.  
+
+Started an EC2 instance with amazon linux and T2 micro
+S3 admin access role
+
+Used an existing security group.  SSH'd into the instance with my existing key pair and connected to the AWS linux AMI server.
+
+Elevated my privileges to super user
+
+Used composer to install the AWS SDK for PHP.
+
+
+With the PHP SDK able to interact with S3 buckets.
+
+With PHP there is a program already written where able to pull file down and read what is in it with the software developer kit.  
+
+### my_aws_journey_10
+
+Accessing the public ip address of an EC2 instance.
+
+You can get the public ip address of an EC2 instance while logged into it.  Need to know the url to access metadata
+
+Ssh into the ec2 isntance and elevate to root
+
+Curl http://169.254.169.254/latest/meta-data/public-ipv4
+
+After that it gives you the public ip address --> you are looking ofr meta data not user data
