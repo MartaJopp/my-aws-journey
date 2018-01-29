@@ -333,3 +333,42 @@ Ssh into the ec2 isntance and elevate to root
 Curl http://169.254.169.254/latest/meta-data/public-ipv4
 
 After that it gives you the public ip address --> you are looking ofr meta data not user data
+
+### my_aws_journey_11
+
+Elastic load balancers are virtual pliance that spread the load of traffic across servers.  There are 2 types - application load balances and class balances.
+
+Application load balances are new and they operate at layer 7 by checking the application.  They are the preferred according to Amazon
+
+Classic load balances operate at layer 4
+
+In EC2 you go to load balances.  
+
+Routing Decisions
+	-MyClassicELB (name it)
+		-external load balancer because we want web traffic
+		-choose what ports listening to
+		-choose existing security group
+	-Configure Health Check --> the guts of load balancer
+	-Advanced:
+		-Response timeout -->amount of time it waits for a response
+		-Interval --> how long waits between response
+		-Unhealthy threshold --> how many times it needs to fail health check before determined EC2 is unhealthy
+		-Healthy threshold --> opposite --> how many times an unhealthy instance needs to pass to be determined healthy.
+	-Add Tags -->elastic load balances will cost money if you leave it on.  Product ELB Value ON
+
+AWS gives a DNS name, not an ip address
+You can simulate an unhealthy ec2 by deleting a file
+
+Go to DNS --> straight to html
+-AWS always uses DNS for ELB --> so you have ec2 instances behind your DNS so nothing goes down
+
+1 subnet equals 1 availability zone
+
+Target Groups are used for routing in application load balances
+
+Instances monitored by ELB are reported as Inservice (healthy) or OutofService (unhealthy)
+
+Health Checks check the instance health by talking it to --> they look for a file such as index.html
+
+Own DNS name --> never given an IP
