@@ -372,3 +372,21 @@ Instances monitored by ELB are reported as Inservice (healthy) or OutofService (
 Health Checks check the instance health by talking it to --> they look for a file such as index.html
 
 Own DNS name --> never given an IP
+
+### my_aws_journey_12
+
+The available SDK's (Software Developer Kits):
+-Android, iOS, JavaScript (Browser)
+-Java
+-.Net
+-Node.js
+-PHP
+-Python
+-Ruby
+-Go
+-C++
+
+These are the languages supported by Amazon.
+
+SDK Default Regions --> Always US-EAST-1
+Some have default regions such as Java, Node.js does not
