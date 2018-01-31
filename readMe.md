@@ -390,3 +390,98 @@ These are the languages supported by Amazon.
 
 SDK Default Regions --> Always US-EAST-1
 Some have default regions such as Java, Node.js does not
+
+### my_aws_journey_13
+
+EC2 Launches in 2006
+
+Data Centre --> took 10 days to get the server
+
+2006 Amazon launched EC2 which allowed you to provision servers from an API call.  You did not have to provision individual servers.  Basically infrastructure for code.  Infrastructure as a service --> still have to manage windows, linux, etc.  Infrastructure as a service only goes so far.  Platform as a service --> elastic beanstalk.  You can upload your code and amazon would create the web service for you.  Amazon would handle it for you, but you are still managing your operating service.  Containers --> Docker.  They are isolated and lightweight, but you still have to deploy to your server and keep them running.
+
+Lambda released in 2015.  You do not have to manage infrastructure, platforms, containers.  Amazon takes care of it.  You take your code and upload it.  You take an event trigger which will call your lambda function.
+
+What is Lambda?
+-Your data center
+-Hardware
+-Assembly Code/Protocols
+-High Level Languages
+-Operating Systems
+-Application Layer/AWS APIs
+-AWS Lambda
+
+Amazon's definition:  AWS Lambda is a compute service where you can upload your code and create a Lambda function.  AWS Lambda takes care of provisioning and managing the servers that you use to run your code.  You don't have to worry about operating systems, patching, scaling, etc.  You can use Lambda in the following ways:
+	-As an event-driven compute service where Lambda runs your code in response to events.  These events could be changes to data, an Amazon S3 bucket or an Amazon DynamoDB table.
+	-As a compute services to run your code in responses to http requests using Amazon API Gateway/API calls made using SDK
+
+Lambda --> React to a particular event or trigger.  The user uploads a picture to S3 which triggers a Lambda function --> which takes it and stores it in S3 which then in turn triggers a Lambda event and return file back to user.  Which can trigger another Lambda event and stores it in another S3 bucket
+
+Each instance - every time you do something with Lambda --> that is one instance.  If you have multiple users --> multiple instances.  Lambda scales automatically.  You do not have to worry about elastic load balance.  Lambda scales out automatically (adds elastic load balances instances).  
+
+Different types of Lambda triggers:
+	AWS Console:
+		-Services - Compute - Lambda
+	
+	Triggers:
+		API Gateway
+		AWS iOT
+		Cloudwatch Events
+		Cloudwatch Logs
+		CodeCommit
+		Cognito Sync Trigger
+		DynamoDB
+		Kinesis 
+		S3
+		SNS
+		Alexa Skills Kit
+		Alexa Smart Home
+		CloudFront
+	
+Using API Gateway:
+	-User browsing in google chrome --> send http request to get a new webpage --> triggers Lambda function and returns response to user.  Scales out automatically so if 2 users with 2 http requests --> scales out and invokes 2 Lambda functions
+	-Multiple lambda functions responding to multiple requests
+	
+Very different than EC2 instances as you might only have 2 instances --> those 2 instances/servers will be what responds to all requests.
+
+What Languages are supported by Lambda?
+	-Node.js
+	-Java
+	-Python
+	-C#
+
+How is Lambda Priced?
+-Based on the number of requests.  First 1 million requests are free --> after that .20 per 1 million requests thereafter.  You are literally paying only when someone is using your application
+
+-Duration --> calculated from time code begins executing until it returns/terminates --> rounded to the nearest 100ms.  Price depends on amount of memory you allocate to your function.  Function cannot execute over 5 minutes.
+
+Lambda
+	-NO SERVERS!
+	-Continuous Scaling - instantly!
+	-CHEAP!   
+	
+Practical use:  Every time you speak to Alexa --> Lambda function and it is Lambda speaking back to you.
+
+REMEMBER:
+Lambda scales out (not up) automatically
+Lambda functions are independent.  1 event = 1 function
+Lambda is serverless
+S3, API Gateway, DynamoDB, LAMBDA are serverless services
+Lambda functions can trigger another Lambda function
+Architectures can be complicated.  Debugging can be difficult!  That is why you have the x-ray service which debugs
+Can use Lambda to back up s3 buckets to other s3 buckets
+Lambda triggers -->
+	API Gateway
+	AWS iOT
+	Cloudwatch Events
+	Cloudwatch Logs
+	CodeCommit
+	Cognito Sync Trigger
+	DynamoDB
+	Kinesis 
+	S3
+	SNS
+	Alexa Skills Kit
+	Alexa Smart Home
+	CloudFront
+Lambda execute time is 5 minutes
+Lambda languages - Node.js, Java, Python, C#
