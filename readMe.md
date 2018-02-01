@@ -547,4 +547,15 @@ Lambda --> Serverless!!!  Compute service where you can upload your code and cre
 	-Can use as an event-driven computer service where AWS Lambda runs your code in response to events.
 	-As a compute service to run your code in response to http requests using Amazon API Gateway or API calls made to AWS SDKs.
 
+### my_aws_journey_15
+
+Items to remember:
+	-The default region for EC2 instance is US-EAST-1.
+	-C++ is not supported by AWS SDK's
+	-To find the public/private ip you use the EC2 instance metadata 169.254.169.254/lates/meta-data
+	-http 3XX means there is a redirection
+	-You can have multiple certificates on an elastic load balancer
+	-Elastic load balancers is a chargeable service up front
+
+
 
