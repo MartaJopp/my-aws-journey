@@ -514,4 +514,37 @@ EBS - Elastic Beanstalk --> SSD, general purposes, SSD provisioned IOPS --> more
 You cannot mount EBS volume to multiple EC2 instances.  If you want to share to multiple --> use EFS
 
 Termination protection is turned off by default.
-Terminating EC2 instances turns OS off
+Terminating EC2 instances turns the operating system off.
+
+Volumes and Snapshots
+	-Volumes --> virtual harddisk on EBS
+	-Snapshot --> S3 they are interval.  First one takes time to create, but then after that not.
+		-Snapshots of encrypted volumes are encrypted automatically.  
+		-stop instance before taking a root volume snapshot
+
+EBS vs Instance store
+	-Instance store volumes cannot be stopped.  You will lose data if underlying host fails.
+	-EBS backed instances can be stopped.
+	-You can reboot both volumes and not lose data.
+
+RAID array - snapshots
+	-Take an applicaiton consistent snapshot.  Stop from writing to disk and caching.  You shutdown ec2 instance and then take the snapshot.  You stop any input or output written/read from RAID array when you want to take the snapshot
+
+Amazon Machine Image (AMI) - you can only launch from the region that it is stored.  They are regional
+
+CloudWatch --> performance monitoring, standard monitoring = 5 minutes, detailed = 1 minute
+CloudTrail --> auditing
+
+CloudWatch --> alarms for autoscaling, events, monitor, store logs
+
+Roles --> more secure than storing your access key, easier to manage from a security standpoint, roles can be assigned to ec2 instance after being provisioned through command line or console.  You can also update role policies.  Roles are universal --> does not matter where you are.
+
+Instance MetaData --> used to get info from an instance.  Command curl http://169.254.169.254/latest/meta-data/
+
+Elastic File System (EFS) -->  You only pay for storage that you use.  No prepay.  .30/GB  Can scale up.  Can support multiple connections.  Data is stored across multiple availability zones w/in a region.  Read after write consistency.
+
+Lambda --> Serverless!!!  Compute service where you can upload your code and create a Lambda function.  AWS takes care of provisioning and managing the server. 
+	-Can use as an event-driven computer service where AWS Lambda runs your code in response to events.
+	-As a compute service to run your code in response to http requests using Amazon API Gateway or API calls made to AWS SDKs.
+
+
