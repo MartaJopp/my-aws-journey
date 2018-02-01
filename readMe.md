@@ -485,3 +485,33 @@ Lambda triggers -->
 	CloudFront
 Lambda execute time is 5 minutes
 Lambda languages - Node.js, Java, Python, C#
+
+### my_aws_journey_14
+
+ec2 review:
+Pricing models:
+	-On Demand --> Minimize costs and take advantae when demand is low.
+	-Spot 
+	-Reserved --> steady amount of traffic
+	-Dedicated Host --> multi tenant compute
+
+Spot instances --> if you terminate the instance you pay for the hour.  If you terminate at 2 1/2 hours --> you pay 3 hours.  If AWS terminates because spot price went above bid price --> you would pay for 2 hours.
+
+Instance types --> DR MCGIFTPIX
+	D - Dense storage --> file servers
+	R - RAM --> memory optimization
+	M4 - General purpose application.  What you would use in production.
+	C - Compute optimized --> cpu and database intensive
+	G - graphic intensive (doing video)
+	I - nosql
+	F - hardware acceleration
+	T2 micros - lowest cost general purposes servers
+	P - pictures --> general purposes GPU,bitcoin, machine learning
+	X1 - extreme RAM --> very RAM heavy
+
+EBS - Elastic Beanstalk --> SSD, general purposes, SSD provisioned IOPS --> more than 10,000 IOPS, HDD-->sequential rights, data warehousing, HDD Cold - SC1 --> less frequently accessed data, HDD Magnetic Standard --> same as Cold but you can have it at Boot volume
+
+You cannot mount EBS volume to multiple EC2 instances.  If you want to share to multiple --> use EFS
+
+Termination protection is turned off by default.
+Terminating EC2 instances turns OS off
