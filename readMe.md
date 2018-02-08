@@ -557,5 +557,16 @@ Items to remember:
 	-You can have multiple certificates on an elastic load balancer
 	-Elastic load balancers is a chargeable service up front
 
+### my_aws_journey_16
+
+Refreshers to remember off the top of my head:
+
+An availability zone is a data center.  Always using more than one.
+
+Edge Zone - used for caching and putting it closer to the customer so it is quicker to grab.
+
+AWS Lambda - you upload your code and lambda takes care of the provisioning and managing of the servers.
+
+
 
 
